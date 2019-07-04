@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改笔记</title>
+</head>
+<body>
+    <form action="/note/mod/{{ anote.id }}" method="post">
+        {% csrf_token %}
+        <div>标题: {{ anote.title }}</div>
+        <div>内容: {{ anote.content }}</div>
+        <div>
+            <input type="text" name="mod_note" value="{{ anote.content }}"
+                   placeholder="请在此处修改内容" required>
+        </div>
+        <div>
+            <input type="submit" value="修改内容">
+        </div>
+    </form>
+</body>
+</html>
